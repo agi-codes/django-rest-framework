@@ -327,7 +327,7 @@ class BaseTokenAuthTests:
         user.is_active = False
         user.save()
         self.model.objects.create(key='foobar_token', user=user)
-        response = self.csrf_client.post(
+        response = self.csrf_client.
             self.path, {'example': 'example'},
             HTTP_AUTHORIZATION=self.header_prefix + 'foobar_token'
         )
